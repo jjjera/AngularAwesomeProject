@@ -6,14 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  // componentId: number = 10;
-  // componentStatus: string = 'offLine';
-  // getComponentStatus(){
-  //   return this.componentStatus;
-  // }
   allowNewComponent = false;
   componentStatus = 'No component button was called!';
-  inputValue = '';
+  inputValue = 'Test component';
+  componentCreated = false;
 
   constructor(){
     setTimeout(() => {
@@ -22,7 +18,8 @@ export class AppComponent implements OnInit {
   }
 
   eventBinding(){
-    this.componentStatus = 'Component button is called';
+    this.componentCreated = true;
+    this.componentStatus = 'Component button is called and the Name is ' + this.inputValue;
   }
 
   onUpdateComponentName(event){

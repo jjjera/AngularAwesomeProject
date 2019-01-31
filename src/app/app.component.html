@@ -1,18 +1,11 @@
 <body>
- <!-- <app-my-first-component></app-my-first-component> -->
- <!-- <p>Component with id {{componentId}} is {{getComponentStatus()}}</p> -->
+    <h1>App component !</h1>
  <label>Component name</label>
+ 
  <input
  type="text"
  class="form-control"
- (input)="onUpdateComponentName($event)"
  >
- <input
- type="text"
- class="form-control"
- [(ngModel)]="inputValue"
- >
- <p>{{inputValue}}</p>
 <button 
 class="btn btn-primary" 
 [disabled]="!allowNewComponent"
@@ -20,6 +13,10 @@ class="btn btn-primary"
 >
 Click
 </button>
-<p>{{componentStatus}}</p>
+<p *ngIf='componentCreated; else noComponent'>Component is called and Component name is {{componentStatus}}</p>
+<ng-template #noComponent>
+    <p>No component was created !</p>
+</ng-template>
 <!-- <p [innerText]="allowNewComponent"></p> -->
+<app-my-first-component></app-my-first-component>
 </body>

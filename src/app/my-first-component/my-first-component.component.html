@@ -1,2 +1,16 @@
-<h1>hai</h1>
-<button (keyup)="clickMe($event)">Reply</button>
+<h1>My first Component !</h1>
+<!-- <button class="btn btn-primary" (click)="clickMe($event)">Reply</button> -->
+<div>
+    <input
+ type="text"
+ class="form-control"
+ (input)="onUpdateComponentName($event)"
+ >
+ <p 
+ [ngStyle]="{backgroundColor:getColor()}"
+ [ngClass]="{online: componentStatus === 'onLine'}"
+ >
+ Component with id {{componentId}} is {{getComponentStatus()}}
+</p>
+  <p>{{inputValue}}</p>
+</div>
